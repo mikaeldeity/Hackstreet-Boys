@@ -10,7 +10,7 @@ import face_alignment
 from skimage import io
 
 username = os.environ.get("USERNAME")
-path = "C:\\Users\\{}\\AppData\\Local\\FaceMesh\\"
+path = "C:\\Users\\{}\\AppData\\Local\\FaceMesh\\".format(username)
 image = path + "Images\\pic.jpg"
 
 
