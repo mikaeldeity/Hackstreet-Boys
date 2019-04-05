@@ -5,10 +5,10 @@ from skimage import io
 
 fa = face_alignment.FaceAlignment(face_alignment.LandmarksType._2D, flip_input=False, device='cpu')
 
-input = io.imread(r"C:\\Users\\Mikael\\Documents\\GitHub\\Hackstreet-Boys\\FaceAlign\\Images\\pic.jpg")
+input = io.imread("C:\\Users\\Mikael\\Documents\\GitHub\\Hackstreet-Boys\\FaceAlign\\Images\\pic.jpg")
 preds = fa.get_landmarks(input)
 
-path = r"C:\\Users\\Mikael\\Documents\\GitHub\\Hackstreet-Boys\\FaceAlign\\"
+path = "C:\\Users\\Mikael\\Documents\\GitHub\\Hackstreet-Boys\\FaceAlign\\"
 
 ptsfile = path + "facepts.pts"
  

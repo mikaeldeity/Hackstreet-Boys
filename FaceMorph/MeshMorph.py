@@ -2,10 +2,11 @@ import eos
 import numpy as np
 
 def main():
-    """Demo for running the eos fitting from Python."""
-    landmarks = read_pts('../bin/data/image_0010.pts')
+    
+    path = "C:\\Users\\Mikael\\Documents\\GitHub\\Hackstreet-Boys\\"
+    landmarks = read_pts(path + "FaceAlign\\facepts.pts")
     image_width = 1280 # Make sure to adjust these when using your own images!
-    image_height = 1024
+    image_height = 720
 
     model = eos.morphablemodel.load_model("../share/sfm_shape_3448.bin")
     blendshapes = eos.morphablemodel.load_blendshapes("../share/expression_blendshapes_3448.bin")
@@ -29,7 +30,9 @@ def main():
     # import cv2
     # image = cv2.imread('../bin/data/image_0010.png')
     # isomap = eos.render.extract_texture(mesh, pose, image)
-
+    
+    p = path + "FaceMeshOutput\\FaceMesh.obj"
+    eos.core.write_obj(mesh,p)
 
 def read_pts(filename):
     """A helper function to read the 68 ibug landmarks from a .pts file."""
