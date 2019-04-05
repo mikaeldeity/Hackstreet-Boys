@@ -1,6 +1,6 @@
 
 import sys
-sys.path.append(r"C:\Users\benrobinson\AppData\Local\Programs\Python\Python37\Lib\site-packages")
+sys.path.append("C:\\Users\\benrobinson\\AppData\\Local\\Programs\\Python\\Python37\\Lib\\site-packages")
 import eos
 import numpy as np
 
