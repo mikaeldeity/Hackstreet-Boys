@@ -1,0 +1,123 @@
+{
+  "Uuid": "6a1ee174-36a4-4c37-aebd-74a2f4bc25c0",
+  "IsCustomNode": true,
+  "Category": "HackStreetBoys",
+  "Description": "Generate mesh from picture",
+  "Name": "MeshFromPicture",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Enable Python support and load DesignScript library\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\nimport sys\r\n\r\nclr.AddReference('IronPython')\r\nsys.path.append(r'C:\\\\Program Files (x86)\\\\IronPython 2.7\\\\Lib')\r\n\r\nimport os.path\r\nimport time\r\nimport subprocess\r\n\r\nusername = os.environ.get(\"USERNAME\")\r\npath = \"C:\\\\Users\\\\{}\\\\AppData\\\\Local\\\\FaceMesh\\\\\".format(username)\r\n\r\npyscript = path + \"RunPY.bat\"\r\n\r\nobjfile = path + \"FaceMeshOutput\\\\FaceMesh.obj\"\r\n\r\ntry:\r\n\tos.remove(objfile)\r\nexcept:\r\n\tpass\r\n\r\nsubprocess.call([pyscript])\r\n\r\n\r\nwhile not os.path.exists(objfile):\r\n    time.sleep(1)\r\n\r\n# Assign your output to the OUT variable.\r\n\r\nOUT = objfile",
+      "VariableInputPorts": true,
+      "Id": "d1ff8eacf66242e68cfdbcae44c419a3",
+      "Inputs": [
+        {
+          "Id": "770eb19bedfb4506b41e61dc9b6eb9dd",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "219e88dd2f5f4fa0b7a707b8988015f9",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "obj",
+      "Id": "217a1e9c0fd44e02a8fa627e427c15d8",
+      "Inputs": [
+        {
+          "Id": "a89dc9b2188944faaab4803860da7ddc",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "219e88dd2f5f4fa0b7a707b8988015f9",
+      "End": "a89dc9b2188944faaab4803860da7ddc",
+      "Id": "9bdc77c87bc94ff7ac3cafbfc206f477"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "GenerateMesh",
+        "Id": "d1ff8eacf66242e68cfdbcae44c419a3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 250.0,
+        "Y": 0.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Output",
+        "Id": "217a1e9c0fd44e02a8fa627e427c15d8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 449.0,
+        "Y": 0.0
+      }
+    ],
+    "Annotations": [],
+    "X": 279.0,
+    "Y": 126.0,
+    "Zoom": 1.0
+  }
+}
