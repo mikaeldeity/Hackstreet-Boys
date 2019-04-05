@@ -1,6 +1,6 @@
 # Hackstreet-Boys
-Dynamo Hackaton best team
+Dynamo Hackaton's best team!
 
 FACE TO MESH PROJECT
 
-use responsibly
+Use with caution
