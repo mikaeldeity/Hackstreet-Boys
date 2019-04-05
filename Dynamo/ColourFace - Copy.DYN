@@ -2450,12 +2450,12 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
       "NodeType": "CodeBlockNode",
-      "Code": "20;",
+      "Code": "10;",
       "Id": "ebc4a0a9046a4c669cdef2766d9d396b",
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "187ccd2649f64aa88646379626622873",
+          "Id": "d242775bf7744cecb7a91847537fb17d",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -2466,134 +2466,6 @@
       ],
       "Replication": "Disabled",
       "Description": "Allows for DesignScript code to be authored directly"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Autodesk.DesignScript.Geometry.Circle.ByCenterPointRadius@Autodesk.DesignScript.Geometry.Point,double",
-      "Id": "4d7577e3e6324134a38002f996fabaa9",
-      "Inputs": [
-        {
-          "Id": "562af91664dd47c9a0a9200012dc48b6",
-          "Name": "centerPoint",
-          "Description": "Point\nDefault value : Autodesk.DesignScript.Geometry.Point.ByCoordinates(0, 0, 0)",
-          "UsingDefaultValue": true,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "b093521e5d0b4d5db10ccfafd1f52e6a",
-          "Name": "radius",
-          "Description": "double\nDefault value : 1",
-          "UsingDefaultValue": true,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "a9c4293506e54e0d960c60e7426f2715",
-          "Name": "Circle",
-          "Description": "Circle",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "Creates a Circle with input center Point and radius in the world XY plane, with world Z as normal.\n\nCircle.ByCenterPointRadius (centerPoint: Point = Autodesk.DesignScript.Geometry.Point.ByCoordinates(0, 0, 0), radius: double = 1): Circle"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "3;",
-      "Id": "c932f30018bb4117b5f2f5b94d3b2df3",
-      "Inputs": [],
-      "Outputs": [
-        {
-          "Id": "b06f1d8358c4449c9d394d0644748e8f",
-          "Name": "",
-          "Description": "Value of expression at line 1",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Autodesk.DesignScript.Geometry.Surface.ByPatch@Autodesk.DesignScript.Geometry.Curve",
-      "Id": "4c63314065c141dea43ead2290504541",
-      "Inputs": [
-        {
-          "Id": "0bd1280217684ef1a3bab0665eb6d72f",
-          "Name": "closedCurve",
-          "Description": "Curve",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "5166afdb2ca44950b1f6fc9b0b34c00a",
-          "Name": "Surface",
-          "Description": "Surface",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "Create a Surface by filling in the interior of a closed boundary defined by input Curves.\n\nSurface.ByPatch (closedCurve: Curve): Surface"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Autodesk.DesignScript.Geometry.Geometry.DoesIntersect@Autodesk.DesignScript.Geometry.Geometry",
-      "Id": "0da046ad307d438da00abbeb1d5e94c6",
-      "Inputs": [
-        {
-          "Id": "f84244872b9a486facb233f0fc9de84b",
-          "Name": "geometry",
-          "Description": "Autodesk.DesignScript.Geometry.Geometry",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "4148a304e3d14e61b3f06d136840fb23",
-          "Name": "other",
-          "Description": "Geometry",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "fc10253b2d4f4a2ea670e5db086dbd86",
-          "Name": "bool",
-          "Description": "bool",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "CrossProduct",
-      "Description": "Determine if another Geometry object intersects with this one\n\nGeometry.DoesIntersect (other: Geometry): bool"
     }
   ],
   "Connectors": [
@@ -3033,44 +2905,19 @@
       "Id": "6245b2cc94584cdaa2a5fe4692e7c1fa"
     },
     {
-      "Start": "ef150fd27e2c46f897910fa525011227",
-      "End": "f84244872b9a486facb233f0fc9de84b",
-      "Id": "b3f60322a02c426f9705d620139c32da"
-    },
-    {
-      "Start": "4ba29b27983b42b4a7fe01042b7bc83b",
-      "End": "562af91664dd47c9a0a9200012dc48b6",
-      "Id": "eec721fe264547e1af3ee5bf7119c4b5"
-    },
-    {
-      "Start": "187ccd2649f64aa88646379626622873",
+      "Start": "d242775bf7744cecb7a91847537fb17d",
       "End": "2619714f96ac493fa9d3b27925968c19",
-      "Id": "0420e674ae4b4aeaad1447a171c913a8"
+      "Id": "625cbe6abb2b462f9386f94e96f9044c"
     },
     {
-      "Start": "187ccd2649f64aa88646379626622873",
+      "Start": "d242775bf7744cecb7a91847537fb17d",
       "End": "c2e6107cef5d44f5a416793f18e298a3",
-      "Id": "67fe9c4293e346a7b0465d56ee95f43c"
+      "Id": "e3c6045f98a246638546949de36186a7"
     },
     {
-      "Start": "187ccd2649f64aa88646379626622873",
+      "Start": "d242775bf7744cecb7a91847537fb17d",
       "End": "51ce337496614b2b950283437f310439",
-      "Id": "1f47e937407e42d2a491354b9c789e92"
-    },
-    {
-      "Start": "a9c4293506e54e0d960c60e7426f2715",
-      "End": "0bd1280217684ef1a3bab0665eb6d72f",
-      "Id": "ff2be5a61d5148948b7a941ece2d8f7c"
-    },
-    {
-      "Start": "b06f1d8358c4449c9d394d0644748e8f",
-      "End": "b093521e5d0b4d5db10ccfafd1f52e6a",
-      "Id": "2b787b22e49d4243b83cdc2488878a50"
-    },
-    {
-      "Start": "5166afdb2ca44950b1f6fc9b0b34c00a",
-      "End": "4148a304e3d14e61b3f06d136840fb23",
-      "Id": "386014f72acf479684e2b3f8fcbd1633"
+      "Id": "2e44c52e85a54400adee24e307daafc4"
     }
   ],
   "Dependencies": [],
@@ -3078,7 +2925,7 @@
   "View": {
     "Dynamo": {
       "ScaleFactor": 1.0,
-      "HasRunWithoutCrash": false,
+      "HasRunWithoutCrash": true,
       "IsVisibleInDynamoLibrary": true,
       "Version": "2.0.2.6826",
       "RunType": "Manual",
@@ -3086,15 +2933,15 @@
     },
     "Camera": {
       "Name": "Background Preview",
-      "EyeX": 658.4983824407899,
-      "EyeY": 121.74637674703351,
-      "EyeZ": -452.09805368875675,
-      "LookX": 0.17907308559847479,
-      "LookY": -146.71428426764052,
-      "LookZ": 14.437321829409825,
-      "UpX": 0.011795506658889666,
-      "UpY": 0.30901699437489294,
-      "UpZ": 0.95098336642127257
+      "EyeX": 628.02758233088423,
+      "EyeY": 207.64620481847109,
+      "EyeZ": -459.54565904506467,
+      "LookX": 0.3281623081915086,
+      "LookY": -219.00711966508513,
+      "LookZ": 16.927281159345171,
+      "UpX": 0.018555676687692077,
+      "UpY": 0.28903179694441422,
+      "UpZ": 0.95713964875430069
     },
     "NodeViews": [
       {
@@ -3814,48 +3661,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3779.9361324638658,
+        "X": 3741.2464527867428,
         "Y": 1587.3536626028479
-      },
-      {
-        "ShowGeometry": true,
-        "Name": "Circle.ByCenterPointRadius",
-        "Id": "4d7577e3e6324134a38002f996fabaa9",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 8858.103211319054,
-        "Y": 2198.8852994003487
-      },
-      {
-        "ShowGeometry": true,
-        "Name": "Code Block",
-        "Id": "c932f30018bb4117b5f2f5b94d3b2df3",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 8732.0,
-        "Y": 2256.0
-      },
-      {
-        "ShowGeometry": true,
-        "Name": "Surface.ByPatch",
-        "Id": "4c63314065c141dea43ead2290504541",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 9137.8910230091933,
-        "Y": 2193.482543470298
-      },
-      {
-        "ShowGeometry": true,
-        "Name": "Geometry.DoesIntersect",
-        "Id": "0da046ad307d438da00abbeb1d5e94c6",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 9417.90465658787,
-        "Y": 2086.7795510777983
       }
     ],
     "Annotations": [
@@ -3909,8 +3716,8 @@
         "Background": "#FFC1D676"
       }
     ],
-    "X": -10784.094348012219,
-    "Y": -2244.8539814225696,
-    "Zoom": 1.1918830412064141
+    "X": -1836.1521135049052,
+    "Y": -568.5723136035283,
+    "Zoom": 0.53185096669700371
   }
 }
