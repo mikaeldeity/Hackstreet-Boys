@@ -5,6 +5,8 @@ from skimage import io
 
 fa = face_alignment.FaceAlignment(face_alignment.LandmarksType._2D, flip_input=False, device='cpu')
 
+image = path + "Images\\pic.jpg"
+
 input = io.imread("C:\\Users\\Mikael\\Documents\\GitHub\\Hackstreet-Boys\\FaceAlign\\Images\\pic.jpg")
 preds = fa.get_landmarks(input)
 
