@@ -1,0 +1,1 @@
+python %UserProfile%\AppData\Local\FaceMesh\Twitter\twitter.py
