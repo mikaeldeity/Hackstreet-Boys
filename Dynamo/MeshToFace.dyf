@@ -3230,9 +3230,9 @@
       "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
       "NodeType": "InputNode",
       "Parameter": {
-        "Name": "mesh",
-        "TypeName": "string",
-        "TypeRank": 0,
+        "Name": "input",
+        "TypeName": "var",
+        "TypeRank": -1,
         "DefaultValue": null,
         "Description": ""
       },
@@ -3256,7 +3256,7 @@
       "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
       "NodeType": "InputNode",
       "Parameter": {
-        "Name": "path",
+        "Name": "file path points: var[]..[]",
         "TypeName": "var",
         "TypeRank": -1,
         "DefaultValue": null,
@@ -3282,7 +3282,7 @@
       "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
       "NodeType": "InputNode",
       "Parameter": {
-        "Name": "path",
+        "Name": "file path image: var[]..[]",
         "TypeName": "var",
         "TypeRank": -1,
         "DefaultValue": null,
@@ -3329,10 +3329,10 @@
       "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
       "NodeType": "InputNode",
       "Parameter": {
-        "Name": "mesh triange count",
-        "TypeName": "var",
-        "TypeRank": -1,
-        "DefaultValue": null,
+        "Name": "MeshCount",
+        "TypeName": "double",
+        "TypeRank": 0,
+        "DefaultValue": "3000",
         "Description": ""
       },
       "Id": "0d19bfb5674a4c6baf6e984d17009807",
@@ -3997,15 +3997,15 @@
     },
     "Camera": {
       "Name": "Background Preview",
-      "EyeX": 652.32463871533878,
-      "EyeY": 363.57370084833281,
-      "EyeZ": -470.5486322293545,
-      "LookX": 0.31929220644087764,
-      "LookY": -371.72453843040455,
-      "LookZ": 7.9130672948851384,
-      "UpX": 0.039186731723124965,
-      "UpY": 0.23514211310251626,
-      "UpZ": 0.971170729945145
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
     },
     "NodeViews": [
       {
@@ -4935,8 +4935,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": -3.9801032030611054,
-        "Y": 7.2968558722787691
+        "X": -960.30367863553874,
+        "Y": -102.30427299751079
       },
       {
         "ShowGeometry": true,
@@ -4945,8 +4945,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 0.0,
-        "Y": 150.0
+        "X": -960.18920479965914,
+        "Y": 30.090526151059635
       },
       {
         "ShowGeometry": true,
@@ -4955,8 +4955,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 0.0,
-        "Y": 300.0
+        "X": -958.82546405641892,
+        "Y": 166.01676294879945
       },
       {
         "ShowGeometry": true,
@@ -4975,199 +4975,49 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": -55.348584355705668,
-        "Y": 478.42907452787193
+        "X": -957.82885805397473,
+        "Y": 307.6917290780595
       }
     ],
     "Annotations": [
       {
-        "Id": "f6784c43af6e40a5b648b70d25fe1b74",
-        "Title": "ORGANIZE FACE RECOGNITION POINTS",
-        "Nodes": [],
-        "Left": -1790.40477286147,
-        "Top": -1527.143144870096,
-        "Width": 0.0,
-        "Height": 0.0,
+        "Id": "f0d085d64f074ae98a09974392ab5044",
+        "Title": "<Click here to edit the group title>",
+        "Nodes": [
+          "77ffa00492db474a9c033d72f621ac7e",
+          "54590865f64d4e2db03d1372b1e7511e",
+          "266d5b2b669444f0a51cc0703763ddf9",
+          "a1f2a391b23f488b9b00d12b2b0a8ef7",
+          "9d045ac869cb43f395785098eafaff7a",
+          "285bdf5994e8427e87cab0052564b81c",
+          "64038564fdb64f8a9eff0b395d7eda24",
+          "01fa369a0d6b48f7bcf0f264e04d8097",
+          "e625000fa1cd4b2ba9453f386d98e561",
+          "8978cbb77657439d848bb5cdfafd3e03",
+          "67c522f30bca4a5fa19ea56c36a25165",
+          "4e2a24ade4284468a05c04a82806eb27",
+          "c8e5590bc7ab48eda0d9f7110d81d62f",
+          "f029ae0a4e05410c83e060a2f8691c90",
+          "17bff032ef4f409db02cb081fecff614",
+          "928b7118f7594ec3aada0883e9e969e2",
+          "1588d601d6214b35b3a57dc763627053"
+        ],
+        "Left": 3175.7269793734204,
+        "Top": 2183.6640129115544,
+        "Width": 2562.6128338573103,
+        "Height": 1091.0287489922159,
         "FontSize": 36.0,
-        "InitialTop": -134.743144870096,
-        "InitialHeight": 361.889051917444,
-        "TextblockHeight": 1382.4,
-        "Background": "#FFC1D676"
-      },
-      {
-        "Id": "aa5c45629bf64a07924dac0a59a0a026",
-        "Title": "",
-        "Nodes": [],
-        "Left": -597.229299028236,
-        "Top": 1201.59906526628,
-        "Width": 0.0,
-        "Height": 0.0,
-        "FontSize": 36.0,
-        "InitialTop": 1254.79906526628,
-        "InitialHeight": 1092.62874899222,
+        "InitialTop": 2236.8640129115543,
+        "InitialHeight": 1115.0287489922162,
         "TextblockHeight": 43.2,
         "Background": "#FFC1D676"
       },
       {
-        "Id": "c4838fd5d44248d3878502d0b9635c60",
-        "Title": "ADJUST MESH POSITION",
-        "Nodes": [],
-        "Left": 1744.75582168782,
-        "Top": -1906.65725821285,
-        "Width": 0.0,
-        "Height": 0.0,
-        "FontSize": 36.0,
-        "InitialTop": -1032.65725821285,
-        "InitialHeight": 580.758489497821,
-        "TextblockHeight": 864.0,
-        "Background": "#FFC1D676"
-      },
-      {
-        "Id": "37ba0220323c48a0bffe5230805fdf90",
-        "Title": "MESH REDUCE",
-        "Nodes": [],
-        "Left": 2385.26053838387,
-        "Top": -1174.412894505007,
-        "Width": 0.0,
-        "Height": 0.0,
-        "FontSize": 36.0,
-        "InitialTop": -689.212894505007,
-        "InitialHeight": 168.063273520289,
-        "TextblockHeight": 475.2,
-        "Background": "#FFC1D676"
-      },
-      {
-        "Id": "8b99054372954e3289a1c678c455add7",
-        "Title": "TRIANGLE CENTER POINT",
-        "Nodes": [],
-        "Left": 2903.60988343554,
-        "Top": 1703.39732625976,
-        "Width": 0.0,
-        "Height": 0.0,
-        "FontSize": 36.0,
-        "InitialTop": 2620.59732625976,
-        "InitialHeight": 253.0,
-        "TextblockHeight": 907.2,
-        "Background": "#FFC1D676"
-      },
-      {
-        "Id": "c647f0a4a1e24c76851300526a7f6482",
-        "Title": "uv points general surface",
-        "Nodes": [],
-        "Left": 3328.43884070857,
-        "Top": 817.50291339821,
-        "Width": 0.0,
-        "Height": 0.0,
-        "FontSize": 36.0,
-        "InitialTop": 1907.50291339821,
-        "InitialHeight": 307.0,
-        "TextblockHeight": 1080.0,
-        "Background": "#FFC1D676"
-      },
-      {
-        "Id": "748688c9319c4d0bab2109a521754a57",
-        "Title": "GET GRID POINTS",
-        "Nodes": [],
-        "Left": 5586.50031820108,
-        "Top": 1294.0239337073,
-        "Width": 0.0,
-        "Height": 0.0,
-        "FontSize": 36.0,
-        "InitialTop": 1952.0239337073,
-        "InitialHeight": 555.677452469991,
-        "TextblockHeight": 648.0,
-        "Background": "#FFC1D676"
-      },
-      {
-        "Id": "f6784c43af6e40a5b648b70d25fe1b74",
-        "Title": "ORGANIZE FACE RECOGNITION POINTS",
-        "Nodes": [],
-        "Left": -1790.40477286147,
-        "Top": -1527.143144870096,
-        "Width": 0.0,
-        "Height": 0.0,
-        "FontSize": 36.0,
-        "InitialTop": 0.0,
-        "InitialHeight": 0.0,
-        "TextblockHeight": 0.0,
-        "Background": "#FFC1D676"
-      },
-      {
         "Id": "aa5c45629bf64a07924dac0a59a0a026",
         "Title": "",
         "Nodes": [],
         "Left": -597.229299028236,
         "Top": 1201.59906526628,
-        "Width": 0.0,
-        "Height": 0.0,
-        "FontSize": 36.0,
-        "InitialTop": 0.0,
-        "InitialHeight": 0.0,
-        "TextblockHeight": 0.0,
-        "Background": "#FFC1D676"
-      },
-      {
-        "Id": "c4838fd5d44248d3878502d0b9635c60",
-        "Title": "ADJUST MESH POSITION",
-        "Nodes": [],
-        "Left": 1744.75582168782,
-        "Top": -1906.65725821285,
-        "Width": 0.0,
-        "Height": 0.0,
-        "FontSize": 36.0,
-        "InitialTop": 0.0,
-        "InitialHeight": 0.0,
-        "TextblockHeight": 0.0,
-        "Background": "#FFC1D676"
-      },
-      {
-        "Id": "37ba0220323c48a0bffe5230805fdf90",
-        "Title": "MESH REDUCE",
-        "Nodes": [],
-        "Left": 2385.26053838387,
-        "Top": -1174.412894505007,
-        "Width": 0.0,
-        "Height": 0.0,
-        "FontSize": 36.0,
-        "InitialTop": 0.0,
-        "InitialHeight": 0.0,
-        "TextblockHeight": 0.0,
-        "Background": "#FFC1D676"
-      },
-      {
-        "Id": "8b99054372954e3289a1c678c455add7",
-        "Title": "TRIANGLE CENTER POINT",
-        "Nodes": [],
-        "Left": 2903.60988343554,
-        "Top": 1703.39732625976,
-        "Width": 0.0,
-        "Height": 0.0,
-        "FontSize": 36.0,
-        "InitialTop": 0.0,
-        "InitialHeight": 0.0,
-        "TextblockHeight": 0.0,
-        "Background": "#FFC1D676"
-      },
-      {
-        "Id": "c647f0a4a1e24c76851300526a7f6482",
-        "Title": "uv points general surface",
-        "Nodes": [],
-        "Left": 3328.43884070857,
-        "Top": 817.50291339821,
-        "Width": 0.0,
-        "Height": 0.0,
-        "FontSize": 36.0,
-        "InitialTop": 0.0,
-        "InitialHeight": 0.0,
-        "TextblockHeight": 0.0,
-        "Background": "#FFC1D676"
-      },
-      {
-        "Id": "748688c9319c4d0bab2109a521754a57",
-        "Title": "GET GRID POINTS",
-        "Nodes": [],
-        "Left": 5586.50031820108,
-        "Top": 1294.0239337073,
         "Width": 0.0,
         "Height": 0.0,
         "FontSize": 36.0,
@@ -5177,8 +5027,8 @@
         "Background": "#FFC1D676"
       }
     ],
-    "X": -3463.3854719300452,
-    "Y": -901.8043366446459,
-    "Zoom": 0.40726309026108731
+    "X": 1386.3875071945397,
+    "Y": 206.29808447881749,
+    "Zoom": 1.1188678520182564
   }
 }
