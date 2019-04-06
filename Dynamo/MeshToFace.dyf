@@ -2051,74 +2051,6 @@
       "Description": "Get the X component of a Point\n\nPoint.X: double"
     },
     {
-      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "0.5;",
-      "Id": "22734868c8c74a56b361b403539b1dac",
-      "Inputs": [],
-      "Outputs": [
-        {
-          "Id": "811b6b3834bb4c74ad7b82c41bfb4d08",
-          "Name": "",
-          "Description": "Value of expression at line 1",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Autodesk.DesignScript.Geometry.Surface.PointAtParameter@double,double",
-      "Id": "2622f912928b40be8f68b6ad350b1c65",
-      "Inputs": [
-        {
-          "Id": "f8db597894a14f0886d6d3cacc9a2311",
-          "Name": "surface",
-          "Description": "Autodesk.DesignScript.Geometry.Surface",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "e75872b0fd7e4fffa1687ae514c1bd4c",
-          "Name": "u",
-          "Description": "double\nDefault value : 0",
-          "UsingDefaultValue": true,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "bcd3700880f243d88254514b8430f4e2",
-          "Name": "v",
-          "Description": "double\nDefault value : 0",
-          "UsingDefaultValue": true,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "81d93731405f40d28f41988fb664e211",
-          "Name": "Point",
-          "Description": "Point",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "Return the Point at specified U and V parameters.\n\nSurface.PointAtParameter (u: double = 0, v: double = 0): Point"
-    },
-    {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
       "FunctionSignature": "Autodesk.Dynamo.MeshToolkit.Mesh.Translate@Autodesk.DesignScript.Geometry.Vector",
@@ -3280,7 +3212,7 @@
         "Name": "MeshCount",
         "TypeName": "double",
         "TypeRank": 0,
-        "DefaultValue": "3000",
+        "DefaultValue": "2000",
         "Description": ""
       },
       "Id": "0d19bfb5674a4c6baf6e984d17009807",
@@ -3381,23 +3313,32 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Autodesk.Dynamo.MeshToolkit.Display.MeshDisplay.ByMeshColor@Autodesk.Dynamo.MeshToolkit.Mesh,DSCore.Color[]",
-      "Id": "5e3738fa70c94db1829e9da8226d9fe2",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Surface.PointAtParameter@double,double",
+      "Id": "2622f912928b40be8f68b6ad350b1c65",
       "Inputs": [
         {
-          "Id": "7543071bb4da4253baa4de6de8145c16",
-          "Name": "mesh",
-          "Description": "Mesh",
+          "Id": "f9b675a13af94daba869457c187cf1f0",
+          "Name": "surface",
+          "Description": "Autodesk.DesignScript.Geometry.Surface",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
         },
         {
-          "Id": "f9961b3ba2e248d8a358ae4a15247a8e",
-          "Name": "meshColoring",
-          "Description": "single color, triangle colors, or vertex colors\n\nColor[]",
-          "UsingDefaultValue": false,
+          "Id": "5b174b33a0bd4e9ea8722c5e00b68f7a",
+          "Name": "u",
+          "Description": "double\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "552f588e81394eca84f0542e7209e529",
+          "Name": "v",
+          "Description": "double\nDefault value : 0",
+          "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
@@ -3405,9 +3346,9 @@
       ],
       "Outputs": [
         {
-          "Id": "a0e2179ee88648a79b5b761d63cd0c11",
-          "Name": "MeshDisplay",
-          "Description": "MeshDisplay",
+          "Id": "b66f204e9b7b4a1bb0b60139ab9ee7a1",
+          "Name": "Point",
+          "Description": "Point",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -3415,37 +3356,27 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Display mesh by single color, triangle colors, or vertex colors\n\nMeshDisplay.ByMeshColor (mesh: Mesh, meshColoring: Color[]): MeshDisplay"
+      "Description": "Return the Point at specified U and V parameters.\n\nSurface.PointAtParameter (u: double = 0, v: double = 0): Point"
     },
     {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Autodesk.Dynamo.MeshToolkit.Mesh.Explode",
-      "Id": "422a79dc89194d23b5a7232692817d99",
-      "Inputs": [
-        {
-          "Id": "e85fdee282ba4a69a9cc10e4c5c31043",
-          "Name": "mesh",
-          "Description": "Autodesk.Dynamo.MeshToolkit.Mesh",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "0.5;",
+      "Id": "22734868c8c74a56b361b403539b1dac",
+      "Inputs": [],
       "Outputs": [
         {
-          "Id": "ae5be111176643cf91907c2213b4a5fc",
-          "Name": "Mesh[]",
-          "Description": "Mesh[]",
+          "Id": "aecb51c4e51a40deb09ff53bc4e7451e",
+          "Name": "",
+          "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
         }
       ],
-      "Replication": "Auto",
-      "Description": "Converts Mesh triangles to individual meshes and returns them.\n\nMesh.Explode ( ): Mesh[]"
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
     }
   ],
   "Connectors": [
@@ -3865,26 +3796,6 @@
       "Id": "a016bc484d0d4c25aa7878d147530763"
     },
     {
-      "Start": "811b6b3834bb4c74ad7b82c41bfb4d08",
-      "End": "bcd3700880f243d88254514b8430f4e2",
-      "Id": "78a5ce57f9ce49499bf52328c8528ddb"
-    },
-    {
-      "Start": "811b6b3834bb4c74ad7b82c41bfb4d08",
-      "End": "e75872b0fd7e4fffa1687ae514c1bd4c",
-      "Id": "348ec041dc7142e3ad5b6aa8e81d3a7e"
-    },
-    {
-      "Start": "81d93731405f40d28f41988fb664e211",
-      "End": "a933dbe1cfc4455d85edaf3792c2995b",
-      "Id": "467ff5b9b2f4469bb120e46e640c38c2"
-    },
-    {
-      "Start": "81d93731405f40d28f41988fb664e211",
-      "End": "9b90a2ea87694beca1faab5f7c67f3fd",
-      "Id": "7bd23f33df7740a1931ee2cd0ac8fa73"
-    },
-    {
       "Start": "745229236aa24e1ebcfacd04815d9b36",
       "End": "57a5237dd1294fbbbdf99c9fde2fe348",
       "Id": "93710d43fe1d4f2f85b5fae80a419c14"
@@ -3907,17 +3818,17 @@
     {
       "Start": "ff452b77b2414dcc80ead17dfee56237",
       "End": "f92d3e21effc41a6a67e777cd62b09b3",
-      "Id": "90d41554c90c41dbac03cca9f7d327bf"
-    },
-    {
-      "Start": "46ef2bb4a0d9436b90bde1be886f1ccd",
-      "End": "f8db597894a14f0886d6d3cacc9a2311",
-      "Id": "b4b5ef66d6e84dd3a63126b4e6d743ed"
+      "Id": "594f60f4a0684ee49c4a0a920bace0af"
     },
     {
       "Start": "46ef2bb4a0d9436b90bde1be886f1ccd",
       "End": "18fcda69ee2240a8854d2a194638e154",
-      "Id": "26311a785c4043dd8fc0580f84299f08"
+      "Id": "4eac2f1d79174dc7ad192b625bf29df2"
+    },
+    {
+      "Start": "46ef2bb4a0d9436b90bde1be886f1ccd",
+      "End": "f9b675a13af94daba869457c187cf1f0",
+      "Id": "957e920f4d644f7bafd017f52f83e6dd"
     },
     {
       "Start": "e0367021ba23409cb1b0e24412e719b6",
@@ -4057,7 +3968,7 @@
     {
       "Start": "0919180466d8430ea39172dbdf53418c",
       "End": "7c30d36533a941d680c36402bc943bc1",
-      "Id": "dacbd836e03b4df4a5057295e564a09f"
+      "Id": "78d212d42bc94a5f95083fab748c5c65"
     },
     {
       "Start": "8897897a3b5042fba5dfa8984d620b91",
@@ -4088,6 +3999,26 @@
       "Start": "e57e2133ed6e4491a6b9d21d4ead3ccd",
       "End": "4a47d7774a21487498025d29efb168f6",
       "Id": "d5b7d910eb144b1bb96010717c77e444"
+    },
+    {
+      "Start": "b66f204e9b7b4a1bb0b60139ab9ee7a1",
+      "End": "9b90a2ea87694beca1faab5f7c67f3fd",
+      "Id": "4a8f3290352a43879aa55df369401dc5"
+    },
+    {
+      "Start": "b66f204e9b7b4a1bb0b60139ab9ee7a1",
+      "End": "a933dbe1cfc4455d85edaf3792c2995b",
+      "Id": "06ff80c5d9444ef7a6367a40ccd6e62b"
+    },
+    {
+      "Start": "aecb51c4e51a40deb09ff53bc4e7451e",
+      "End": "552f588e81394eca84f0542e7209e529",
+      "Id": "78a5ce57f9ce49499bf52328c8528ddb"
+    },
+    {
+      "Start": "aecb51c4e51a40deb09ff53bc4e7451e",
+      "End": "5b174b33a0bd4e9ea8722c5e00b68f7a",
+      "Id": "1c984c8bed754f9a98755af510ecee15"
     }
   ],
   "Dependencies": [],
@@ -4103,15 +4034,15 @@
     },
     "Camera": {
       "Name": "Background Preview",
-      "EyeX": 23.470548422950525,
-      "EyeY": 984.486837994096,
-      "EyeZ": -108.19085348450969,
-      "LookX": 0.43188663690837725,
-      "LookY": -987.06462432291812,
-      "LookZ": 34.819785173394223,
-      "UpX": 0.012012881391394181,
-      "UpY": 0.24868988716485577,
-      "UpZ": 0.9685086632047234
+      "EyeX": 682.558913469824,
+      "EyeY": 415.42874159416232,
+      "EyeZ": -489.2012468267518,
+      "LookX": 1.8256306603990424,
+      "LookY": -431.66579209324726,
+      "LookZ": 24.220005229722119,
+      "UpX": 0.072394906669054279,
+      "UpY": 0.26891982061526581,
+      "UpZ": 0.96043797695042132
     },
     "NodeViews": [
       {
@@ -4706,26 +4637,6 @@
       },
       {
         "ShowGeometry": false,
-        "Name": "Code Block",
-        "Id": "22734868c8c74a56b361b403539b1dac",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 6345.92783632744,
-        "Y": 3957.08256906006
-      },
-      {
-        "ShowGeometry": false,
-        "Name": "Surface.PointAtParameter",
-        "Id": "2622f912928b40be8f68b6ad350b1c65",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 6525.12783632744,
-        "Y": 3913.86923572673
-      },
-      {
-        "ShowGeometry": false,
         "Name": "Mesh.Translate",
         "Id": "da1a209a0b0c4cb5951cacf84c269fc0",
         "IsSetAsInput": false,
@@ -5031,8 +4942,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 11074.81075810441,
-        "Y": 2744.9958964398957
+        "X": 11077.747034050035,
+        "Y": 2653.9713421255178
       },
       {
         "ShowGeometry": true,
@@ -5051,8 +4962,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 11430.687716062879,
-        "Y": 2744.77698853254
+        "X": 11588.956942121931,
+        "Y": 2736.2334546897682
       },
       {
         "ShowGeometry": true,
@@ -5085,24 +4996,24 @@
         "Y": -105.70729020326
       },
       {
-        "ShowGeometry": true,
-        "Name": "MeshDisplay.ByMeshColor",
-        "Id": "5e3738fa70c94db1829e9da8226d9fe2",
+        "ShowGeometry": false,
+        "Name": "Surface.PointAtParameter",
+        "Id": "2622f912928b40be8f68b6ad350b1c65",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 10941.448740321564,
-        "Y": 2247.5028277419015
+        "X": 6525.12783632744,
+        "Y": 3913.86923572673
       },
       {
         "ShowGeometry": false,
-        "Name": "Mesh.Explode",
-        "Id": "422a79dc89194d23b5a7232692817d99",
+        "Name": "Code Block",
+        "Id": "22734868c8c74a56b361b403539b1dac",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 6901.7335517159763,
-        "Y": 14.577099053109009
+        "X": 6345.92783632744,
+        "Y": 3957.08256906006
       }
     ],
     "Annotations": [
@@ -5219,10 +5130,10 @@
         "Nodes": [
           "ecd18f54263d474fb8efbc79b3566495",
           "2d398741756b46d49b3657084506609b",
-          "22734868c8c74a56b361b403539b1dac",
-          "2622f912928b40be8f68b6ad350b1c65",
           "af0377c8477f4b9ea22d4c90c6fab86f",
-          "d0c80f0209354009ab14c3fef3ba750f"
+          "d0c80f0209354009ab14c3fef3ba750f",
+          "2622f912928b40be8f68b6ad350b1c65",
+          "22734868c8c74a56b361b403539b1dac"
         ],
         "Left": 6335.92783632744,
         "Top": 3806.66923572673,
@@ -5279,7 +5190,7 @@
         ],
         "Left": 10678.508970682607,
         "Top": 2519.2983868419956,
-        "Width": 675.90178742180217,
+        "Width": 678.83806336742748,
         "Height": 424.78081522858764,
         "FontSize": 36.0,
         "InitialTop": 2572.4983868419954,
@@ -5288,8 +5199,8 @@
         "Background": "#FFC1D676"
       }
     ],
-    "X": 1037.1986089651675,
-    "Y": 244.70413848240835,
-    "Zoom": 0.89007729378020828
+    "X": 1244.8725957048432,
+    "Y": -84.3734146586454,
+    "Zoom": 1.0079146280390874
   }
 }
