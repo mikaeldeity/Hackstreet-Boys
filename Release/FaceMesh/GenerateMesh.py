@@ -3,6 +3,7 @@ import sys
 
 import eos
 import numpy as np
+import cv2
 
 from PIL import Image
 
@@ -15,14 +16,23 @@ timestamp = sys.argv[1]
 username = os.environ.get("USERNAME")
 path = "C:\\Users\\{}\\AppData\\Local\\FaceMesh\\".format(username)
 image = path + "Images\\" + timestamp + ".jpg"
+imagePoints = path + "Images\\" + "pointsOnImage_" + timestamp + ".jpg" #GIF
 ptsfile = path + "facepts_" + timestamp + ".pts"
 objpath = path + "FaceMeshOutput\\FaceMesh_" + timestamp + ".obj"
+
+
+font                   = cv2.FONT_HERSHEY_SIMPLEX
+bottomLeftCornerOfText = (25,75)
+fontScale              = 3
+fontColor              = (0,255,0)
+lineType               = 2
 
 def imagePTS():
 
     fa = face_alignment.FaceAlignment(face_alignment.LandmarksType._2D, flip_input=False, device='cpu')
 
     input = io.imread(image)
+    imageCV = cv2.imread(image) #GIF
     preds = fa.get_landmarks(input)
     
     myfile = open(ptsfile, 'w')
@@ -36,6 +46,15 @@ def imagePTS():
     myfile.write("}")
     
     myfile.close()
+
+    cv2.putText(imageCV,'HACKSTREET BOYS!', bottomLeftCornerOfText, font, fontScale, fontColor, lineType)
+    cv2.imwrite(imagePoints, imageCV) #GIF
+    gImage = Image.open(image) #GIF
+    gImage1 = Image.open(imagePoints) #GIF
+
+    imageList = [gImage,gImage1] #GIF
+
+    imageList[0].save('pointsOnFace.gif',save_all=True, append_images=imageList[1:], duration=200, loop=0) #GIF    
 
 def read_pts(filename):
 
