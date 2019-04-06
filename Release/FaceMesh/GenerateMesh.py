@@ -20,6 +20,13 @@ imagePoints = path + "Images\\" + "pointsOnImage_" + timestamp + ".jpg" #GIF
 ptsfile = path + "facepts_" + timestamp + ".pts"
 objpath = path + "FaceMeshOutput\\FaceMesh_" + timestamp + ".obj"
 
+
+font                   = cv2.FONT_HERSHEY_SIMPLEX
+bottomLeftCornerOfText = (25,75)
+fontScale              = 3
+fontColor              = (0,255,0)
+lineType               = 2
+
 def imagePTS():
 
     fa = face_alignment.FaceAlignment(face_alignment.LandmarksType._2D, flip_input=False, device='cpu')
@@ -40,6 +47,7 @@ def imagePTS():
     
     myfile.close()
 
+    cv2.putText(imageCV,'HACKSTREET BOYS!', bottomLeftCornerOfText, font, fontScale, fontColor, lineType)
     cv2.imwrite(imagePoints, imageCV) #GIF
     gImage = Image.open(image) #GIF
     gImage1 = Image.open(imagePoints) #GIF
