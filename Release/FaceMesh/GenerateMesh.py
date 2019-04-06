@@ -1,4 +1,5 @@
 import os
+import sys
 
 import eos
 import numpy as np
@@ -9,12 +10,13 @@ import face_alignment
 
 from skimage import io
 
-timestamp = 
+timestamp = sys.argv[1]
 
 username = os.environ.get("USERNAME")
 path = "C:\\Users\\{}\\AppData\\Local\\FaceMesh\\".format(username)
 image = path + "Images\\" + timestamp + ".jpg"
-
+ptsfile = path + "facepts_" + timestamp + ".pts"
+objpath = path + "FaceMeshOutput\\FaceMesh_" + timestamp + ".obj"
 
 def imagePTS():
 
@@ -22,8 +24,6 @@ def imagePTS():
 
     input = io.imread(image)
     preds = fa.get_landmarks(input)
-
-    ptsfile = path + "facepts_" + timestamp + ".pts"
     
     myfile = open(ptsfile, 'w')
     
@@ -53,7 +53,7 @@ def read_pts(filename):
 
 def morphMesh():
     
-    landmarks = read_pts(path + "facepts.pts")
+    landmarks = read_pts(ptsfile)
     with Image.open(image) as img:
         image_width = img.size[0]
         image_height = img.size[1]
@@ -70,12 +70,14 @@ def morphMesh():
     (mesh, pose, shape_coeffs, blendshape_coeffs) = eos.fitting.fit_shape_and_pose(morphablemodel_with_expressions,
         landmarks, landmark_mapper, image_width, image_height, edge_topology, contour_landmarks, model_contour)
 
-    p = path + "FaceMeshOutput\\FaceMesh.obj"
-    eos.core.write_obj(mesh,p)
+    eos.core.write_obj(mesh,objpath)
 
+def main():
 
+    imagePTS()
+    morphMesh()
 
-
-imagePTS()
-
-morphMesh()
+    print(timestamp)
+ 
+if __name__=='__main__':
+    main()
