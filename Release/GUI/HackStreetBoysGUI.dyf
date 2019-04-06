@@ -1,0 +1,224 @@
+{
+  "Uuid": "ce59db4a-baae-46c2-b425-d5542464570b",
+  "IsCustomNode": true,
+  "Category": "MeshByFaceNodes",
+  "Description": "GIF display",
+  "Name": "HackStreetBoysGUI",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "\r\n#############-------------\\-------------#############\r\n\r\nimport clr\r\n\r\nclr.AddReference(\"System.Windows.Forms\")\r\nclr.AddReference(\"System.Drawing\")\r\n\r\nfrom System.Windows.Forms import Application, Form, Label, Button, DockStyle, AnchorStyles, Panel, ComboBox \r\nfrom System.Windows.Forms import WebBrowser, LinkLabel, OpenFileDialog, ToolBar, ToolBarButton, TextBox, ScrollBars, PictureBox, FormWindowState, PictureBoxSizeMode, AutoSizeMode\r\nfrom System.Drawing import Size, Point, Font, Bitmap, Icon, Color, Image\r\n\r\nclr.AddReference('RevitAPIUI')\r\nfrom  Autodesk.Revit.UI import Selection\r\n\r\nclr.AddReference('RevitNodes')\r\nimport Revit\r\nclr.ImportExtensions(Revit.Elements)\r\nclr.ImportExtensions(Revit.GeometryConversion)\r\n\r\nclr.AddReference('RevitServices')\r\nfrom RevitServices.Persistence import DocumentManager\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\nuidoc = DocumentManager.Instance.CurrentUIApplication.ActiveUIDocument\r\n\r\nimport sys\r\npyt_path = r'C:\\Program Files (x86)\\IronPython 2.7\\Lib'\r\nsys.path.append(pyt_path)\r\n\r\nimport os\r\nimport webbrowser\r\nimport winsound\r\nfrom System.Media import SoundPlayer\r\n#import subprocess\r\n\r\n\r\nusername = os.environ.get(\"USERNAME\")\r\npathGUI = \"C:\\\\Users\\\\{}\\\\AppData\\\\Local\\\\GUI\\\\\".format(username)\r\n#pathTwitter = \"C:\\\\Users\\\\{}\\\\AppData\\\\Local\\\\Twitter\\\\\".format(username)\r\n\r\n#pyscript = pathTwitter + \"RunPyTwitter.bat\"\r\n\r\nsp = SoundPlayer()\r\nsp.SoundLocation = pathGUI + \"bboys.wav\"\r\n\r\n\r\n\r\n\r\nrun = IN[0]\r\nimage = Image.FromFile(IN[1])\r\n\r\nlogo = Image.FromFile(pathGUI + \"hackstreetboys.png\") \r\nicon = Image.FromFile(pathGUI + \"meshface.png\")\r\n\r\nurl = \"https://www.backstreetboys.com/splash\"\r\n\r\n\r\n\r\nbuttonSpace = 20\r\npanelSpace = 35\r\ncancelSpace = 75\r\nfont = Font(\"Bahnschrift\", 7)\r\n\r\n\r\nclass IForm(Form):\r\n#Create the winfrom UI\r\n\r\n    def __init__(self):\r\n        #self is the UI itself\r\n\r\n        \r\n        self.Text = \"MESH BY FACE\"\r\n        self.Font = font\r\n        self.output = \"false\"\r\n        self.Icon = Icon.FromHandle(icon.GetHicon()) #takes a png and converts to a file that can be used as a Icon\r\n        \r\n        #Below commands make sure the window appears in front of all other windows.\r\n        self.WindowState = FormWindowState.Normal\r\n        self.BringToFront()\r\n        self.Topmost = True\r\n        self.Focus()\r\n        self.CenterToScreen()\r\n        self.BackColor = Color.White \r\n\r\n        self.Width = 1280\r\n        self.Height = 620    \r\n        width = self.Width\r\n        height = self.Height \r\n\r\n#///////////////////////////////////////////////////////////////////////////////////\r\n\r\n        #create winform elements for buttons and links etc\r\n        \r\n        btnOk = Button()\r\n        btnCancel = Button()\r\n        helplink = LinkLabel()\r\n        pic = PictureBox()\r\n        mainPic = PictureBox()\r\n        panel1 = Panel()\r\n        panel = Panel()\r\n        scrollbar = ScrollBars()\r\n\r\n\r\n\r\n#///////////////////////////////////////////////////////////////////////////////////\r\n\r\n        #logo file\r\n        pic.Parent = self\r\n        pic.Location = Point(10,height -120)\r\n        ratio = (logo.Height/logo.Width)\r\n        h = float(logo.Height)\r\n        w = float(logo.Width)\r\n        ratio = h/w \r\n        pic.Size = Size(300,300*ratio) # scale the image byu the ratio of the dif between h & w\r\n        pic.SizeMode = PictureBoxSizeMode.Zoom # zooms the image to fit the picture box extent\r\n        pic.Image = logo\r\n        pic.Anchor = (AnchorStyles.Bottom | AnchorStyles.Left)\r\n        \r\n        \r\n        \r\n        \r\n#///////////////////////////////////////////////////////////////////////////////////\r\n\r\n        #logo file\r\n        mainPic.Parent = self\r\n        mainPic.Location = Point(5,5)\r\n        ratio = (logo.Height/logo.Width)\r\n        h = float(logo.Height)\r\n        w = float(logo.Width)\r\n        ratio = h/w \r\n        mainPic.Size = Size(500,500) #*ratio scale the image byu the ratio of the dif between h & w\r\n        mainPic.SizeMode = PictureBoxSizeMode.Zoom # zooms the image to fit the picture box extent\r\n        mainPic.Image = image\r\n        mainPic.Anchor = (AnchorStyles.Bottom | AnchorStyles.Left)\r\n\r\n#///////////////////////////////////////////////////////////////////////////////////\r\n\r\n        helplink.Parent = self\r\n        helplink.Text = \"To the Gift Shop\"\r\n        helplink.Font = font\r\n        helplink.Tag = url\r\n        helplink.Click += self.openurl\r\n        helplink.Location = Point(width/3, height - 65)\r\n        self.Controls.Add(helplink) #self.Controls create the hyerlink\r\n        helplink.Anchor = (AnchorStyles.Bottom | AnchorStyles.Left)\r\n\r\n#///////////////////////////////////////////////////////////////////////////////////\r\n\r\n        pHeight = btnOk.Height + panelSpace\r\n        panel1.Height = pHeight\r\n        panel1.Dock = DockStyle.Bottom\r\n        panel1.Parent = self\r\n        #panel is a box within the UI the bottom is hosted to. the panel is hosted to the UI popup itself.\r\n\r\n        x = btnOk.Width *2 + buttonSpace\r\n        y = (pHeight - btnOk.Height) / 2\r\n\r\n#///////////////////////////////////////////////////////////////////////////////////\r\n\r\n        btnOk.Parent = panel1\r\n        btnOk.Text = \"Generate!\"\r\n        btnOk.Location = Point(width-x,y)\r\n        btnOk.Anchor = (AnchorStyles.Right | AnchorStyles.Bottom)\r\n        btnOk.Click += self.okButtonPressed\r\n        #create the putton, host it to the panel. anchor locks it the the UI so it moves with the window if it is scaled.it\r\n        #self.okButtonPressed is the insruction what to do when the button is pressed\r\n\r\n        btnCancel.Parent = panel1\r\n        btnCancel.Text = \"Cancel\"\r\n        btnCancel.Location = Point((width-x + cancelSpace),y)\r\n        btnCancel.Anchor = (AnchorStyles.Right | AnchorStyles.Bottom)\r\n        btnCancel.Click += self.CnlButtonPressed\r\n\r\n\r\n\r\n#///////////////////////////////////////////////////////////////////////////////////\r\n\r\n        #autosize the form to adjust to textbox\r\n        self.AutoSize = True\r\n        self.AutoSizeMode = AutoSizeMode.GrowAndShrink  \r\n\r\n\r\n\r\n    def okButtonPressed(self, sender, args):\r\n        self.Close()\r\n        self.output = True\r\n        #when ok button pressed close UI and output true\r\n\r\n\r\n    def CnlButtonPressed(self, sender, args):\r\n        self.Close()\r\n        self.output = False\r\n\r\n\r\n    def openurl(self, sender, event):\r\n        webbrowser.open(sender.Tag)\r\n        self.Close()\r\n        self.output = True\r\n\r\n\r\n        \r\n\r\nform = IForm()\r\n  \r\nif run == True:\r\n    sp.Play()\r\n    Application.Run(form)\r\n    #subprocess.call([pyscript])\r\n    results = form.output\r\n    OUT = results\r\n\r\nelse: \r\n\r\n\tOUT = False",
+      "VariableInputPorts": true,
+      "Id": "40c6325ba4124fa990181f33de6a5546",
+      "Inputs": [
+        {
+          "Id": "acbd5b4e388e481ea1349ed76f7c4d7f",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "34d01c7d718240b4aca4cc7a58abb4a4",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a883b7a1210d4d4c911873f1a81674a8",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "OUT",
+      "Id": "31b3effedfec41debf34ea85ca340f06",
+      "Inputs": [
+        {
+          "Id": "a52f989902bc4850aab7593ac20a31cf",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "GIFfilePath",
+        "TypeName": "string",
+        "TypeRank": 0,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "f6cb169969544b08a2d4cc6e3b0a15c6",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d5aabd90520b4a908f9819e3c6fd2674",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Enable Python support and load DesignScript library\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\nfilePath = IN[0]\r\ncheck = \"GUI\"\r\n\r\nif check in filePath:\r\n\tOUT = True\r\nelse:\r\n\tOUT = False\r\n\r\n",
+      "VariableInputPorts": true,
+      "Id": "69b0020ef34c4b6fa7fedbff6987e037",
+      "Inputs": [
+        {
+          "Id": "5dce2d0d861c479db82d268451d155ce",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "7c4c78d4a9c543a8b92dbb4065ce8a5c",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "a883b7a1210d4d4c911873f1a81674a8",
+      "End": "a52f989902bc4850aab7593ac20a31cf",
+      "Id": "b0641b62ac28404ea2a779b6e9a8c4f0"
+    },
+    {
+      "Start": "d5aabd90520b4a908f9819e3c6fd2674",
+      "End": "34d01c7d718240b4aca4cc7a58abb4a4",
+      "Id": "e43fc46033b8453395b31e094e77ed63"
+    },
+    {
+      "Start": "d5aabd90520b4a908f9819e3c6fd2674",
+      "End": "5dce2d0d861c479db82d268451d155ce",
+      "Id": "e7269114cfa8400cb7e01eca9f4e8970"
+    },
+    {
+      "Start": "7c4c78d4a9c543a8b92dbb4065ce8a5c",
+      "End": "acbd5b4e388e481ea1349ed76f7c4d7f",
+      "Id": "655e0bf8988d4ab385b4a03d6574d6f8"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "GUI",
+        "Id": "40c6325ba4124fa990181f33de6a5546",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 433.80229214552,
+        "Y": -1.51991906699482
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Output",
+        "Id": "31b3effedfec41debf34ea85ca340f06",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 627.09124098604957,
+        "Y": 19.708292328542285
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "f6cb169969544b08a2d4cc6e3b0a15c6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -40.661807285667464,
+        "Y": 48.891571864505778
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "runCheck",
+        "Id": "69b0020ef34c4b6fa7fedbff6987e037",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 234.68195512545378,
+        "Y": -23.393855685051506
+      }
+    ],
+    "Annotations": [],
+    "X": 40.097746938350269,
+    "Y": 203.57938671486363,
+    "Zoom": 0.96556678260774209
+  }
+}
