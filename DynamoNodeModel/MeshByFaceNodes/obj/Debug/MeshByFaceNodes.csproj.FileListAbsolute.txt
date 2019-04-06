@@ -1,0 +1,11 @@
+C:\Users\Oliver\source\repos\Dynamo_ExplicitNodes1\MeshByFaceNodes\bin\Debug\MeshByFaceNodes.xml
+C:\Users\Oliver\source\repos\Dynamo_ExplicitNodes1\MeshByFaceNodes\bin\Debug\MeshByFaceNodes.dll
+C:\Users\Oliver\source\repos\Dynamo_ExplicitNodes1\MeshByFaceNodes\bin\Debug\MeshByFaceNodes.pdb
+C:\Users\Oliver\source\repos\Dynamo_ExplicitNodes1\MeshByFaceNodes\bin\Debug\DynamoServices.dll
+C:\Users\Oliver\source\repos\Dynamo_ExplicitNodes1\MeshByFaceNodes\bin\Debug\DynamoUnits.dll
+C:\Users\Oliver\source\repos\Dynamo_ExplicitNodes1\MeshByFaceNodes\bin\Debug\ProtoGeometry.dll
+C:\Users\Oliver\source\repos\Dynamo_ExplicitNodes1\MeshByFaceNodes\obj\Debug\MeshByFaceNodes.csproj.CoreCompileInputs.cache
+C:\Users\Oliver\source\repos\Dynamo_ExplicitNodes1\MeshByFaceNodes\obj\Debug\MeshByFaceNodes.csproj.CopyComplete
+C:\Users\Oliver\source\repos\Dynamo_ExplicitNodes1\MeshByFaceNodes\obj\Debug\MeshByFaceNodes.dll
+C:\Users\Oliver\source\repos\Dynamo_ExplicitNodes1\MeshByFaceNodes\obj\Debug\MeshByFaceNodes.pdb
+C:\Users\Oliver\source\repos\Dynamo_ExplicitNodes1\MeshByFaceNodes\obj\Debug\MeshByFaceNodes.csprojAssemblyReference.cache

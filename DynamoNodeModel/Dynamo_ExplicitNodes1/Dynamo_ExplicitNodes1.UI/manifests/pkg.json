@@ -1,0 +1,21 @@
+﻿{
+  "license": "",
+  "file_hash": null,
+  "name": "Dynamo_ExplicitNodes1",
+  "version": "0.0.1",
+  "description": "",
+  "group": "",
+  "keywords": null,
+  "dependencies": [],
+  "contents": "",
+  "engine_version": "2.1.0.7465",
+  "engine": "dynamo",
+  "engine_metadata": "",
+  "site_url": "",
+  "repository_url": "",
+  "contains_binaries": true,
+  "node_libraries": [
+    "Dynamo_ExplicitNodes1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+"Dynamo_ExplicitNodes1.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
