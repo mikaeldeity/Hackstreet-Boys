@@ -9,9 +9,11 @@ import face_alignment
 
 from skimage import io
 
+timestamp = 
+
 username = os.environ.get("USERNAME")
 path = "C:\\Users\\{}\\AppData\\Local\\FaceMesh\\".format(username)
-image = path + "Images\\pic.jpg"
+image = path + "Images\\" + timestamp + ".jpg"
 
 
 def imagePTS():
@@ -21,7 +23,7 @@ def imagePTS():
     input = io.imread(image)
     preds = fa.get_landmarks(input)
 
-    ptsfile = path + "facepts.pts"
+    ptsfile = path + "facepts_" + timestamp + ".pts"
     
     myfile = open(ptsfile, 'w')
     
@@ -70,6 +72,9 @@ def morphMesh():
 
     p = path + "FaceMeshOutput\\FaceMesh.obj"
     eos.core.write_obj(mesh,p)
+
+
+
 
 imagePTS()
 

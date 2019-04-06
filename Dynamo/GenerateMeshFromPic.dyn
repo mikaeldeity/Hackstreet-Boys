@@ -10,37 +10,6 @@
   "Outputs": [],
   "Nodes": [
     {
-      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
-      "NodeType": "PythonScriptNode",
-      "Code": "# Enable Python support and load DesignScript library\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\nimport sys\r\n\r\nclr.AddReference('IronPython')\r\nsys.path.append(r'C:\\\\Program Files (x86)\\\\IronPython 2.7\\\\Lib')\r\n\r\nimport os.path\r\nimport time\r\nimport subprocess\r\n\r\nusername = os.environ.get(\"USERNAME\")\r\npath = \"C:\\\\Users\\\\{}\\\\AppData\\\\Local\\\\FaceMesh\\\\\".format(username)\r\n\r\npyscript = path + \"RunPY.bat\"\r\n\r\nobjfile = path + \"FaceMeshOutput\\\\FaceMesh.obj\"\r\n\r\ntry:\r\n\tos.remove(objfile)\r\nexcept:\r\n\tpass\r\n\r\nsubprocess.call([pyscript])\r\n\r\n\r\nwhile not os.path.exists(objfile):\r\n    time.sleep(1)\r\n\r\n# Assign your output to the OUT variable.\r\n\r\nOUT = objfile",
-      "VariableInputPorts": true,
-      "Id": "e0fc2d13a03741189eb4d0c2db67c43f",
-      "Inputs": [
-        {
-          "Id": "770eb19bedfb4506b41e61dc9b6eb9dd",
-          "Name": "IN[0]",
-          "Description": "Input #0",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "219e88dd2f5f4fa0b7a707b8988015f9",
-          "Name": "OUT",
-          "Description": "Result of the python script",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled",
-      "Description": "Runs an embedded IronPython script."
-    },
-    {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
       "NodeType": "ExtensionNode",
       "Id": "3e3c81f8a899436e8ba1060c733cd6e3",
@@ -70,39 +39,37 @@
       "Description": "Visualize the output of node."
     },
     {
-      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
-      "NodeType": "BooleanInputNode",
-      "InputValue": true,
-      "Id": "55120fc4dbb247889c35d1f3bdcf6ea1",
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "6a1ee174-36a4-4c37-aebd-74a2f4bc25c0",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "92a9bf2cfb1240678e05a082b2d82e48",
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "060a7dbbc0634aca8cf5085816837dc7",
-          "Name": "",
-          "Description": "Boolean",
+          "Id": "cce69be65a3d4d73a20f2663ad240858",
+          "Name": "obj",
+          "Description": "return value",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
         }
       ],
-      "Replication": "Disabled",
-      "Description": "Selection between a true and false."
+      "Replication": "Auto",
+      "Description": "Generate mesh from picture"
     }
   ],
   "Connectors": [
     {
-      "Start": "219e88dd2f5f4fa0b7a707b8988015f9",
+      "Start": "cce69be65a3d4d73a20f2663ad240858",
       "End": "c29e79ecf1ed46e6a1d74903f3918458",
-      "Id": "7314869ea3e54ea3b1f86f1080bc182d"
-    },
-    {
-      "Start": "060a7dbbc0634aca8cf5085816837dc7",
-      "End": "770eb19bedfb4506b41e61dc9b6eb9dd",
-      "Id": "74f77b9a967740d6bed9d9398cef8523"
+      "Id": "078b09ae2d734dce95b9ff04698e510c"
     }
   ],
-  "Dependencies": [],
+  "Dependencies": [
+    "6a1ee174-36a4-4c37-aebd-74a2f4bc25c0"
+  ],
   "Bindings": [],
   "View": {
     "Dynamo": {
@@ -128,38 +95,28 @@
     "NodeViews": [
       {
         "ShowGeometry": true,
-        "Name": "GenerateMesh",
-        "Id": "e0fc2d13a03741189eb4d0c2db67c43f",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 366.0,
-        "Y": 247.0
-      },
-      {
-        "ShowGeometry": true,
         "Name": "Watch",
         "Id": "3e3c81f8a899436e8ba1060c733cd6e3",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 528.0,
-        "Y": 248.0
+        "X": 549.35065043614213,
+        "Y": 246.70602118568831
       },
       {
         "ShowGeometry": true,
-        "Name": "Boolean",
-        "Id": "55120fc4dbb247889c35d1f3bdcf6ea1",
+        "Name": "MeshFromPicture",
+        "Id": "92a9bf2cfb1240678e05a082b2d82e48",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 178.0,
-        "Y": 256.0
+        "X": 366.0,
+        "Y": 247.0
       }
     ],
     "Annotations": [],
-    "X": 0.0,
-    "Y": 0.0,
-    "Zoom": 1.0
+    "X": 27.9580490781251,
+    "Y": -121.60398685937503,
+    "Zoom": 1.545620359375
   }
 }
