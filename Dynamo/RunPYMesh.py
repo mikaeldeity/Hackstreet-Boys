@@ -24,7 +24,7 @@ os.remove(objfile)
 subprocess.call([pyscript])
 
 while not os.path.exists(objfile):
-    time.sleep(1)
+    time.sleep(1000)
 
 # Assign your output to the OUT variable.
 
