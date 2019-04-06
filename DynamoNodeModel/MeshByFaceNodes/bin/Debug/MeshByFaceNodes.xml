@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MeshByFaceNodes</name>
+    </assembly>
+    <members>
+        <member name="M:MeshByFaceNodes.MeshByFacePipeline.CreateOBJFile(System.String)">
+            <summary>
+            This node takes the output of the MeshByFace.WebcamSelfie node (a filepath to a .jpg image as a string) and uses the EOS ML framework to derive a Mesh stored in the .obj format.
+            </summary>
+            <param name="timestampString">String: the fully-qualified filepath to the .jpeg created by the MeshByFace.WebcamSelfie node.</param>
+            <returns>String: the fully-qualified filepath of the generated .obj file.</returns>
+            <search>mesh, obj, jpeg, jpg, face</search>
+        </member>
+        <member name="M:MeshByFaceNodes.TwitterConnection.TweetSelfie(System.String)">
+            <summary>
+            This node takes the output of the MeshByFace.WebcamSelfie node (a filepath to a .jpg image as a string) and uses the EOS ML framework to derive a Mesh stored in the .obj format.
+            </summary>
+            <param name="filepathString">String: the fully-qualified filepath to the .jpeg created by the MeshByFace.WebcamSelfie node.</param>
+            <returns>String: the fully-qualified filepath of the generated .obj file.</returns>
+            <search>mesh, obj, jpeg, jpg, face</search>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,5 @@
+C:\Users\Oliver\source\repos\Dynamo_ExplicitNodes1\Dynamo_ExplicitNodes1\Dynamo_ExplicitNodes1\bin\Debug\Dynamo_ExplicitNodes1.Functions.dll
+C:\Users\Oliver\source\repos\Dynamo_ExplicitNodes1\Dynamo_ExplicitNodes1\Dynamo_ExplicitNodes1\bin\Debug\Dynamo_ExplicitNodes1.Functions.pdb
+C:\Users\Oliver\source\repos\Dynamo_ExplicitNodes1\Dynamo_ExplicitNodes1\Dynamo_ExplicitNodes1\obj\Debug\Dynamo_ExplicitNodes1.csproj.CoreCompileInputs.cache
+C:\Users\Oliver\source\repos\Dynamo_ExplicitNodes1\Dynamo_ExplicitNodes1\Dynamo_ExplicitNodes1\obj\Debug\Dynamo_ExplicitNodes1.Functions.dll
+C:\Users\Oliver\source\repos\Dynamo_ExplicitNodes1\Dynamo_ExplicitNodes1\Dynamo_ExplicitNodes1\obj\Debug\Dynamo_ExplicitNodes1.Functions.pdb

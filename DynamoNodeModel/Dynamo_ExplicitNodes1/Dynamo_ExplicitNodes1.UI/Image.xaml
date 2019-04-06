@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="Dynamo_ExplicitNodes1.UI.Image"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Dynamo_ExplicitNodes1.UI"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="550" Background="#333333">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Image x:Name="frameHolder" Stretch="Fill" Grid.Row="0" Panel.ZIndex="1" Margin="50,10"/>
+        <Button x:Name="imageCaptureButton" Height="50" Width="550" Content="Take a BIMselfie" Click="ImageCaptureButton_Click" Grid.Row="1"/>
+    </Grid>
+</UserControl>

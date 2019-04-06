@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dynamo_ExplicitNodes1.UI", "Dynamo_ExplicitNodes1\Dynamo_ExplicitNodes1.UI\Dynamo_ExplicitNodes1.UI.csproj", "{E357F084-DE52-4868-9DD5-273F2DB75695}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dynamo_ExplicitNodes1", "Dynamo_ExplicitNodes1\Dynamo_ExplicitNodes1\Dynamo_ExplicitNodes1.csproj", "{9122391D-CB14-4FE2-BDFA-790AEA668D0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeshByFaceNodes", "MeshByFaceNodes\MeshByFaceNodes.csproj", "{86B95D34-703B-4C90-AACA-18F5C0157618}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E357F084-DE52-4868-9DD5-273F2DB75695}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E357F084-DE52-4868-9DD5-273F2DB75695}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E357F084-DE52-4868-9DD5-273F2DB75695}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E357F084-DE52-4868-9DD5-273F2DB75695}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9122391D-CB14-4FE2-BDFA-790AEA668D0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9122391D-CB14-4FE2-BDFA-790AEA668D0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9122391D-CB14-4FE2-BDFA-790AEA668D0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9122391D-CB14-4FE2-BDFA-790AEA668D0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86B95D34-703B-4C90-AACA-18F5C0157618}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86B95D34-703B-4C90-AACA-18F5C0157618}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86B95D34-703B-4C90-AACA-18F5C0157618}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86B95D34-703B-4C90-AACA-18F5C0157618}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F15EC007-69BF-4A4F-A560-7318FD389C20}
+	EndGlobalSection
+EndGlobal
